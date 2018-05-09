@@ -4,15 +4,16 @@
 </div>
 
 <script>
-fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>{
-  data.forEach(item=>
-  document.querySelector('#repos').append('<dl>'+
-  '<dt>Repos</dt>' +
-  '<dd>'+item.repos+'</dd>' +
-  '<dt>Homepage</dt>' +
-  '<dd>'+item.homepage+'</dd>' +
-  '</dl>')
-  )
+fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>{  
+  var str = data.map(item=>
+  '<dl>'+
+  '<dt>Name</dt>' +
+  '<dd>'+item.full_name+'</dd>' +
+  '<dt>Url</dt>' +
+  '<dd>'+item.url+'</dd>' +
+  '</dl>').join('')  
+
+  document.querySelector('#repos').innerHTML = str;
 })
 </script>
             
