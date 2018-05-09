@@ -5,7 +5,7 @@
 
 <script>
 fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>{
-  data.forEeach(item=>
+  data.forEach(item=>
   document.querySelector('#repos').append('<dl>'+
   '<dt>Repos</dt>' +
   '<dd>'+item.repos+'</dd>' +
