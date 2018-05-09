@@ -3,18 +3,10 @@ layout: default
 ---
 
             
-{% include career-profile.html %}
+<script>
+fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>console.log(data))
+</script>
             
-{% if site.education_in_main %}
-    {% include education-section.html %}
-{% endif %}
-            
-{% include experience.html %}
-            
-{% include projects.html %}
-            
-{% include publications.html %}
-            
-{% include skills.html %}
+
 
 
