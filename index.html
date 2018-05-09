@@ -1,10 +1,19 @@
----
-layout: default
----
+<h1>List all repos, if match user-cv then show it as member profile</h1>
+<div id="repos">
 
-            
+</div>
+
 <script>
-fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>console.log(data))
+fetch('https://api.github.com/users/agiletechvn/repos').then(ret => ret.json()).then(data=>{
+  data.forEeach(item=>
+  document.querySelector('#repos').append('<dl>'+
+  '<dt>Repos</dt>' +
+  '<dd>'+item.repos+'</dd>' +
+  '<dt>Homepage</dt>' +
+  '<dd>'+item.homepage+'</dd>' +
+  '</dl>')
+  )
+})
 </script>
             
 
